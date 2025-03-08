@@ -4,6 +4,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* colors */
   --color-brown: #53423e;
   --color-lightBrown: #645550;
   --color-darkBrown: #2c2523;
@@ -18,6 +19,17 @@
   --color-grey: #626965;
   --color-lightGrey: #978580;
   --color-darkGrey: #3f4441;
+
+  /* screens */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 350px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-screen-2xl: 1536px;
+
+  /* boxShadow */
+  --shadow-cyanShadow: 0px 0px 20px 0px rgba(94, 205, 220, 0.5);
 }
 
 body {

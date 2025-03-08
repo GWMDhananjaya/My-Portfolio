@@ -4,7 +4,12 @@ import logo from "../../../public/images/logo.png";
 const NavbarLogo = () => {
   return (
     <div>
-      <img src={logo} alt="" className="w-14 h-auto rounded-full" />
+      <img
+        src={logo}
+        alt=""
+        className="w-18 h-auto rounded-full sm:hidden md:block"
+      />
+      <img src={logo} alt="" className="w-18 rounded-full sm:block md:hidden" />
     </div>
   );
 };
