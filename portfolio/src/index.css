@@ -30,6 +30,8 @@
 
   /* boxShadow */
   --shadow-cyanShadow: 0px 0px 20px 0px rgba(94, 205, 220, 0.5);
+  --shadow-cyanMediumshadow: 10px 10px 200px 150px rgba(94, 206, 220, 0.5);
+  --shadow-orangeMediumshadow: 10px 10px 200px 150px rgba(248, 189, 79, 0.5);
 }
 
 body {
