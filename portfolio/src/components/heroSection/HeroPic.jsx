@@ -1,11 +1,12 @@
 import React from "react";
 import { FaCentercode } from "react-icons/fa";
+import Mainpic from "../../assets/images/main.jpg";
 
 const HeroPic = () => {
   return (
     <div className="h-full flex item-center justify-center">
       <img
-        src="../../../public/images/main-photoaidcom-cropped.jpg"
+        src={Mainpic}
         alt="dhananjaya image"
         className="max-h-[350px] w-auto "
       />
