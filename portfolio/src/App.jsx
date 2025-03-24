@@ -6,6 +6,8 @@ import SubHeroSection from "./components/heroSection/SubHeroSection";
 import AboutMeMain from "./components/aboutMeSection/AboutMeMain";
 import SkillsMain from "./components/skillsSection/SkillsMain";
 import SubSkills from "./components/skillsSection/SubSkills";
+import HelperSection from "./components/HelperSection";
+import ExperienceMain from "./components/experienceSection/ExperienceMain";
 
 function App() {
   return (
@@ -15,8 +17,11 @@ function App() {
       <HeroGradient />
       <SubHeroSection />
       <AboutMeMain />
-      <SubSkills />
+
       <SkillsMain />
+      <SubSkills />
+      <ExperienceMain />
+      <HelperSection />
     </main>
   );
 }
