@@ -1,32 +1,43 @@
 import React from "react";
 import ProjectText from "./ProjectText";
 import SingleProject from "./SingleProject";
-import Image from "./website-img-3.jpg";
+import Image1 from "../../assets/images/website 06.jpg";
+import Image2 from "../../assets/images/website 01.jpg";
+import Image3 from "../../assets/images/website 04.jpg";
+import Image4 from "../../assets/images/website 03.jpg";
 
 const projects = [
   {
-    name: "xxxx",
-    year: "2020",
-    image: Image,
+    name: "Pencraft",
+    year: "2023",
+    align: "right",
+    image: Image1,
     link: "#",
+    pname: "Fiverr project",
   },
   {
-    name: "xaxa",
-    year: "2002",
-    image: Image,
+    name: "E-Channelling_System",
+    year: "2022",
+    align: "left",
+    image: Image2,
     link: "#",
+    pname: "University Group project",
   },
   {
-    name: "xaxa",
-    year: "2020",
-    image: Image,
+    name: "TECMIS",
+    year: "2023",
+    align: "right",
+    image: Image3,
     link: "#",
+    pname: "University Group project",
   },
   {
-    name: "xaxa",
-    year: "2020",
-    image: Image,
+    name: "Time_Zone_Comparator",
+    year: "2025",
+    align: "left",
+    image: Image4,
     link: "#",
+    pname: "Individual project",
   },
 ];
 
@@ -43,6 +54,7 @@ const ProjectMain = () => {
               year={item.year}
               align={item.align}
               image={item.image}
+              pname={item.pname}
             />
           );
         })}
