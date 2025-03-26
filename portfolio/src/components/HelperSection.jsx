@@ -1,7 +1,7 @@
 import React from "react";
 
 const HelperSection = () => {
-  return <div>HelperSection</div>;
+  return <div></div>;
 };
 
 export default HelperSection;
