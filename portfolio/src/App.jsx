@@ -6,11 +6,12 @@ import SubHeroSection from "./components/heroSection/SubHeroSection";
 import AboutMeMain from "./components/aboutMeSection/AboutMeMain";
 import SkillsMain from "./components/skillsSection/SkillsMain";
 import SubSkills from "./components/skillsSection/SubSkills";
-import HelperSection from "./components/HelperSection";
 import ExperienceMain from "./components/experienceSection/ExperienceMain";
 import ProjectMain from "./components/projectsSection/ProjectMain";
 import ContactMeMain from "./components/contactMeSection/ContactMeMain";
 import FooterMain from "./components/footer/FooterMain";
+import ReviewSection from "./components/ReviewSection/ReviewSection";
+import ReviewShow from "./components/ReviewSection/ReviewShow";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       <ProjectMain />
       <ContactMeMain />
       <FooterMain />
-      <HelperSection />
+      <ReviewSection />
+      <ReviewShow />
     </main>
   );
 }

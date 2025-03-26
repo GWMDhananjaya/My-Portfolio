@@ -1,32 +1,47 @@
-import React from "react";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { closeMenu } from "../state/menuSlice"; // Make sure this path is correct
+
 import NavbarLogo from "./NavbarLogo";
 import NavbarLinks from "./NavbarLinks";
 import NavbarBtn from "./NavbarBtn";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
+import NavbarToggler from "./NavbarToggler";
 
 const NavbarMain = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const menuOpen = useSelector((state) => state.menu.menuOpen);
+  const dispatch = useDispatch();
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        dispatch(closeMenu());
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen, dispatch]);
+
   return (
-    <nav className="max-w-[1300px] mx-auto px-4 w-full fixed left-[50%] -translate-x-[50%] z-20 flex gap-4 mt-2">
-      <div className="flex justify-between w-full max-w-[1200px] mx-auto bg-black items-center p-3 rounded-r-full rounded-l-full border-[0.5px] border-orange ">
+    <nav
+      ref={navRef}
+      className="opacity-100 max-w-[1300px] mx-auto w-full px-4 translate-x-[0%] z-20 flex gap-4 mt-5"
+    >
+      <div className="flex justify-between w-full max-w-[1200px] mx-auto bg-black items-center p-3 rounded-r-full rounded-l-full border-orange border-[0.5px]">
         <NavbarLogo />
         <div className={`${menuOpen ? "sm:block" : "sm:hidden"} lg:block`}>
           <NavbarLinks />
         </div>
-
         <NavbarBtn />
       </div>
-      <div className="flex lg:hidden p-6 bg-black items-center justify-center rounded-full border-[0.5px] border-orange">
-        <button
-          className="text-2xl p-3 border border-orange rounded-full text-white"
-          onClick={toggleMenu}
-        >
-          <GiHamburgerMenu />
-        </button>
+      <div className="flex lg:hidden sm:block p-6 bg-black items-center justify-center rounded-full border-orange border-[0.5px]">
+        <NavbarToggler />
       </div>
     </nav>
   );
