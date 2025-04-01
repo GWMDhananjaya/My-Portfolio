@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 const AboutMeText = () => {
   return (
@@ -12,12 +13,28 @@ const AboutMeText = () => {
         real-world projects.
       </p>
       <div className="flex gap-6 ">
-        <button className="border border-orange rounded-full py-2 px-4 flex items-center mt-10 hover:bg-orange transition-all duration-500 cursor-pointer md:self-start sm:self-center text-white hover:text-cyan">
-          My Projects
-        </button>
-        <button className="border border-orange rounded-full py-2 px-4 flex items-center mt-10 hover:bg-orange transition-all duration-500 cursor-pointer md:self-start sm:self-center text-white hover:text-cyan">
-          Hire Me
-        </button>
+        <Link
+          to="projects"
+          smooth={true}
+          spy={true}
+          duration={500}
+          offset={-200}
+        >
+          <button className="border border-orange rounded-full py-2 px-4 flex items-center mt-10 hover:bg-orange transition-all duration-500 cursor-pointer md:self-start sm:self-center text-white hover:text-cyan">
+            My Projects
+          </button>
+        </Link>
+        <Link
+          to="contact"
+          smooth={true}
+          spy={true}
+          duration={500}
+          offset={-200}
+        >
+          <button className="border border-orange rounded-full py-2 px-4 flex items-center mt-10 hover:bg-orange transition-all duration-500 cursor-pointer md:self-start sm:self-center text-white hover:text-cyan">
+            Hire Me
+          </button>
+        </Link>
       </div>
     </div>
   );

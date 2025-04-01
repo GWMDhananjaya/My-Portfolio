@@ -14,7 +14,8 @@ import ReviewSection from "./components/ReviewSection/ReviewSection";
 import ReviewShow from "./components/ReviewSection/ReviewShow";
 import Reviews from "./components/ReviewSection/Reviews";
 import GitHubContributions from "./components/GitHubContributions/GitHubContributions";
-
+import AboutGradient from "./components/aboutMeSection/AboutGradient";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <main className="font-body">
@@ -23,7 +24,7 @@ function App() {
       <HeroGradient />
       <SubHeroSection />
       <AboutMeMain />
-
+      <AboutGradient />
       <SkillsMain />
       <SubSkills />
 
@@ -31,7 +32,6 @@ function App() {
       <ProjectMain />
       <Reviews />
       <ContactMeMain />
-      <GitHubContributions />
 
       <FooterMain />
     </main>
