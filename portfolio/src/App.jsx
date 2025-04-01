@@ -12,6 +12,8 @@ import ContactMeMain from "./components/contactMeSection/ContactMeMain";
 import FooterMain from "./components/footer/FooterMain";
 import ReviewSection from "./components/ReviewSection/ReviewSection";
 import ReviewShow from "./components/ReviewSection/ReviewShow";
+import Reviews from "./components/ReviewSection/Reviews";
+import GitHubContributions from "./components/GitHubContributions/GitHubContributions";
 
 function App() {
   return (
@@ -24,12 +26,14 @@ function App() {
 
       <SkillsMain />
       <SubSkills />
+
       <ExperienceMain />
       <ProjectMain />
+      <Reviews />
       <ContactMeMain />
+      <GitHubContributions />
+
       <FooterMain />
-      <ReviewSection />
-      <ReviewShow />
     </main>
   );
 }

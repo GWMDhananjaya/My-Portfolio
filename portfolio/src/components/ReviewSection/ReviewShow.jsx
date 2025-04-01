@@ -1,3 +1,4 @@
+// not need
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 
@@ -11,16 +12,16 @@ const ReviewShow = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-2xl font-bold mt-6">Reviews</h2>
-      <div className="space-y-4 mt-4">
+      <h2 className="text-2xl font-bold mt-6">Reviewsss</h2>
+      <div className="space-y-4 mt-4 flex">
         {reviews.map((review, index) => (
           <Card key={index}>
             <CardContent className="p-4">
-              <div className="flex items-center space-x-3">
+              <div className="items-center space-x-3">
                 <img
                   src={`https://flagcdn.com/w40/${review.country.toLowerCase()}.png`}
                   alt={review.country}
-                  className="w-8 h-5"
+                  className="w-8 h-8 rounded-lg object-contain"
                 />
                 <p className="font-semibold">
                   {review.name} ({review.country})
