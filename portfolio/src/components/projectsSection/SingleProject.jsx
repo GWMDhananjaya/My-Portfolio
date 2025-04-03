@@ -32,7 +32,7 @@ const SingleProject = ({
       } justify-end sm:flex-col`}
     >
       <div>
-        <h2 className="md:text-3xl sm:text-2xl text-orange">{name}</h2>
+        <h2 className="md:text-2xl sm:text-xl text-orange">{name}</h2>
         <h2
           className={`text-xl font-thin text-white font-special sm:text-center ${
             align === "left" ? "md:text-right" : "md:text-left"
@@ -42,7 +42,9 @@ const SingleProject = ({
         </h2>
         <button
           onClick={handleNavigate}
-          className="text-lg flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500 cursor-pointer sm:justify-self-center"
+          className={`text-lg flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500 cursor-pointer sm:justify-self-center ${
+            align === "left" ? "md:justify-self-end" : "md:justify-self-start"
+          }`}
         >
           View <BiSolidRightTopArrowCircle />
         </button>

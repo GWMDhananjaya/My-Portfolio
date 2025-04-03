@@ -99,7 +99,7 @@ const projects = [
     pname: "Individual project",
     description:
       "A React color picker using React hooks (useState, useRef) that lets users select a color and view its HEX, RGB, HSL, and HSV values. Styled with Tailwind CSS, it is lightweight, efficient, and easy to integrate into any React project.\n\nFeatures:\n🔹Select any color using an interactive color picker\n🔹Instantly view color codes in HEX, RGB, HSL, and HSV formats",
-    videoLink: "https://www.youtube.com/watch?v=TdR9UIblUQU",
+    videoLink: "https://www.youtube.com/watch?v=XJGb5yiquXM",
   },
 ];
 

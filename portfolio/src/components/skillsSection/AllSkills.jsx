@@ -53,16 +53,13 @@ const AllSkills = () => {
         {skills.map((item, index) => {
           return (
             <motion.div
+              key={index}
               variants={fadeIn("up", 0.1)}
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amout: 0 }}
             >
-              <SingleSkill
-                key={index}
-                text={item.text}
-                imgSvg={<item.icon />}
-              />
+              <SingleSkill text={item.text} imgSvg={<item.icon />} />
             </motion.div>
           );
         })}

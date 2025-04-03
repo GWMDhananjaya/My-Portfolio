@@ -5,6 +5,7 @@ const HeroGradient = () => {
     <div>
       <div className="shadow-cyanMediumshadow absolute top-0 right-[400px] -z-10 animate-spin "></div>
       <div className="shadow-orangeMediumshadow absolute top-0 right-[40px] -z-10 animate-pulse opacity-60"></div>
+      <div className="shadow-cyanMediumshadow absolute top-[200] left-[2px] -z-10 animate-spin opacity-50"></div>
     </div>
   );
 };

@@ -18,6 +18,7 @@ import AboutGradient from "./components/aboutMeSection/AboutGradient";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProjectMain from "./components/projectsSection/ProjectMain";
 import ProjectDetails from "./components/projectsSection/ProjectDetails";
+import ReviewForm from "./components/ReviewSection/ReviewForm";
 
 function App() {
   return (
@@ -43,7 +44,9 @@ function App() {
             </main>
           }
         />
+
         <Route path="/project-details" element={<ProjectDetails />} />
+        <Route path="/review-form" element={<ReviewForm />} />
       </Routes>
     </Router>
   );
