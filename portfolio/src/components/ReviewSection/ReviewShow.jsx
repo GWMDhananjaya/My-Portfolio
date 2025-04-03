@@ -12,7 +12,6 @@ const ReviewShow = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-2xl font-bold mt-6">Reviewsss</h2>
       <div className="space-y-4 mt-4 flex">
         {reviews.map((review, index) => (
           <Card key={index}>

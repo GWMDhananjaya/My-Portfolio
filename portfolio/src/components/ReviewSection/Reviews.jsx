@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ReviewsCard from "./ReviewsCard";
-import ReviewsPopup from "./ReviewsPopup";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../components/framerMotion/variants";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [reviewText, setReviewText] = useState("");
-  const [reviewName, setReviewName] = useState("");
+  const navigate = useNavigate();
 
   const reviewsPerPage = 3;
 
@@ -27,24 +25,6 @@ const Reviews = () => {
     );
   };
 
-  const handleReviewSubmit = () => {
-    if (!reviewName || !reviewText) {
-      alert("Please enter your name and review.");
-      return;
-    }
-
-    const newReview = {
-      name: reviewName,
-      message: reviewText,
-      country: "US", // Default country (can be changed)
-    };
-
-    setReviews([...reviews, newReview]);
-    setIsPopupOpen(false);
-    setReviewName("");
-    setReviewText("");
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center md:px-32 px-5">
       <motion.h1
@@ -54,7 +34,7 @@ const Reviews = () => {
         viewport={{ once: false, amount: 0 }}
         className="text-6xl text-cyan mb-10 text-center"
       >
-        Review
+        Reviews
       </motion.h1>
       <motion.div
         variants={fadeIn("up", 0.2)}
@@ -91,24 +71,12 @@ const Reviews = () => {
           </motion.button>
         )}
         <button
-          onClick={() => setIsPopupOpen(true)}
+          onClick={() => navigate("/review-form")}
           className="border border-orange rounded-full py-2 px-4 flex items-center mt-10 hover:bg-orange transition-all duration-500 cursor-pointer md:self-start sm:self-center text-white hover:text-cyan"
         >
           Place Review
         </button>
       </motion.div>
-
-      {isPopupOpen && (
-        <ReviewsPopup
-          isOpen={isPopupOpen}
-          onClose={() => setIsPopupOpen(false)}
-          onSubmit={handleReviewSubmit}
-          reviewName={reviewName}
-          setReviewName={setReviewName}
-          reviewText={reviewText}
-          setReviewText={setReviewText}
-        />
-      )}
     </div>
   );
 };
