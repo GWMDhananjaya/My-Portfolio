@@ -8,6 +8,8 @@ import { SiRedux } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { FaFlutter } from "react-icons/fa6";
 import SingleSkill from "./SingleSkill";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../components/framerMotion/variants";
 
 const skills = [
   {
@@ -49,10 +51,17 @@ const AllSkilsSM = () => {
     <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-12 my-12">
       {skills.map((item, index) => {
         return (
-          <div key={index} className="flex flex-col items-center">
+          <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amout: 0.7 }}
+            key={index}
+            className="flex flex-col items-center"
+          >
             <item.icon className="text-7xl text-orange" />
             <p className="text-center mt-4 text-white">{item.skill}</p>
-          </div>
+          </motion.div>
         );
       })}
     </div>
