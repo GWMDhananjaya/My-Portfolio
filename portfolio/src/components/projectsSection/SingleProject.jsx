@@ -32,7 +32,7 @@ const SingleProject = ({
       } justify-end sm:flex-col`}
     >
       <div>
-        <h2 className="md:text-3xl sm:text-2xl text-orange">{name}</h2>
+        <h2 className="md:text-2xl sm:text-2xl text-orange">{name}</h2>
         <h2
           className={`text-xl font-thin text-white font-special sm:text-center ${
             align === "left" ? "md:text-right" : "md:text-left"
@@ -40,12 +40,14 @@ const SingleProject = ({
         >
           {year}
         </h2>
-        <button
-          onClick={handleNavigate}
-          className="text-lg flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500 cursor-pointer sm:justify-self-center"
-        >
-          View <BiSolidRightTopArrowCircle />
-        </button>
+        <div className={`flex justify-${align === "right" ? "start" : "end"} `}>
+          <button
+            onClick={handleNavigate}
+            className="text-lg flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500 cursor-pointer sm:justify-self-center"
+          >
+            View <BiSolidRightTopArrowCircle />
+          </button>
+        </div>
       </div>
 
       <div
